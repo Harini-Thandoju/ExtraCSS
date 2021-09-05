@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+div.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: black;
+}
+div.container div.ball{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    transition-duration:0.3s ;/*takes 0.3 seconds to change as radius given*/
+    transition-timing-function: cubic-bezier(0.57, 0.22, 0.3, 1.11);
+}
+div.container:hover div.ball{
+    /*border-radius: 50%;*/
+    /*transform: rotateX(60deg);rotates the ele in x-axis 60 degrees*/
+    /*transform: rotateZ(60deg);*/
+    /*transform: scale(2);*/
+    transform: translateX(400px);
+    background-color: red;
+    cursor: pointer;
+}
