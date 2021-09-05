@@ -15,15 +15,79 @@ div.container div.ball{
     width: 100px;
     height: 100px;
     background-color: blueviolet;
-    transition-duration:0.3s ;/*takes 0.3 seconds to change as radius given*/
-    transition-timing-function: cubic-bezier(0.57, 0.22, 0.3, 1.11);
+   /* transition-duration:0.3s ;/*takes 0.3 seconds to change as radius given
+    transition-timing-function: cubic-bezier(0.57, 0.22, 0.3, 1.11);*/
 }
-div.container:hover div.ball{
+/*div.container:hover div.ball{
     /*border-radius: 50%;*/
-    /*transform: rotateX(60deg);rotates the ele in x-axis 60 degrees*/
-    /*transform: rotateZ(60deg);*/
+    /*transform: rotateX(60deg);rotates the ele in x-axis 60 degrees
+    transform: rotateZ(120deg);
     /*transform: scale(2);*/
-    transform: translateX(400px);
+    /*transform: translateX(400px);
     background-color: red;
     cursor: pointer;
+}*/
+/*we need specify time nd duration in the hover itself in animations*/
+div./*container:hover div.*/ball{
+    animation-duration: 2s;
+    animation-name: stylish-rotate;
+    animation-fill-mode: forwards;/*retains its actual state*/
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-iteration-count: infinite;
+    animation-delay: 1s;/*starts after 1sec*/
+}
+div.ball:nth-child(2){
+    animation-delay: 2s;
+    animation-name: bounce;
+    animation-duration: 2s;
+}
+div.ball:nth-child(3){
+    animation-delay: 3s;
+}
+div.ball:nth-child(4){
+    animation-delay: 4s;
+    animation-name: bounce;
+    animation-duration: 2s;
+}
+div.ball:nth-child(5){
+    animation-delay: 5s;
+}
+@keyframes bounce {
+   0%{
+
+   } 
+   25%{
+       transform: translateY(100px);
+   }
+   50%{
+    transform: translateY(0px);
+   }
+   75%{
+       transform: translateY(-100px);
+   }
+}
+@keyframes stylish-rotate {
+    0%{
+        background-color: violet;
+    }
+    14%{
+        background: white;
+    }
+    28%{
+        background: green;
+    }
+42%{
+    background: blue;
+}
+56%{
+    background: yellow;
+}
+84%{
+    background: pink;
+}
+    100%{
+        background: orange;
+        transform: rotate(360deg);
+        border-radius: 10px;
+    }
 }
